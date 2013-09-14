@@ -1,10 +1,10 @@
-# CathayCheck
+# ANZCheck
 
-Check the bank account balance with a script so it can be done automatically.
+Check the credit card account balance with a script so it can be done automatically.
 
-Credentials are the ID number, PIN, and a code chosen by the user, they are passed with
-environmental variables at the moment.
-Eg. in Linux: export ID=xxxxxxxxxx; export PIN=xxxx; export CODE=xxxxxx
+Credentials are the USERNAME (ARC or ID card number), USERID, and a code chosen by the user,
+they are passed with environmental variables at the moment.
+Eg. in Linux: export USERNAME=XXxxxxxxxx; export USERID=xxxxxx; export PASSWORD=xxxxxx;
 
 Fixing a bunch of small tidbits, and will eventually move to a single file Python solution.
 
