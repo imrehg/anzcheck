@@ -22,7 +22,6 @@ print "Total balance: %d" % (balance)
 
 today = date.today()
 todayform = today.strftime("%Y/%m/%d")
-todayform = '2013/09/10'
 printedheader = False
 for tr in soup.find_all('tr'):
     td = tr.find_all('td')
