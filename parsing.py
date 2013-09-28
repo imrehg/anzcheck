@@ -2,7 +2,7 @@
 
 from bs4 import BeautifulSoup
 import sys
-from datetime import date
+from datetime import date, timedelta
 
 html_data=open(sys.argv[1], "r")
 html_doc=html_data.read()
@@ -20,8 +20,8 @@ def getInt(str):
 balance = getInt(balancestr)
 print "Total balance: %d" % (balance)
 
-today = date.today()
-todayform = today.strftime("%Y/%m/%d")
+yesterday = date.today() - timedelta(days=1)
+yesterdayform = yesterday.strftime("%Y/%m/%d")
 printedheader = False
 for tr in soup.find_all('tr'):
     td = tr.find_all('td')
@@ -30,9 +30,9 @@ for tr in soup.find_all('tr'):
     else:
         try:
             setdate = td[1].find('div').string
-            if setdate == todayform:
+            if setdate == yesterdayform:
                 if not printedheader:
-                    print "\nNew charges on %s" % todayform
+                    print "\nNew charges on %s" % yesterdayform
                     print "-"*25
                     printedheader = True
                 origindate = td[0].find('div').string.encode('utf-8')
